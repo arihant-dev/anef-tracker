@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or legal analysis, please cite it as below."
+authors:
+  - family-names: "ANEF Tracker Project Authors"
+title: "ANEF Residence Permit Tracker & Evidence-Based Workflow Intelligence Platform"
+version: 0.9.0
+date-released: 2026-07-25
+url: "https://github.com/anef-tracker/anef-tracker"

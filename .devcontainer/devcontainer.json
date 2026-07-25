@@ -1,0 +1,23 @@
+{
+  "name": "ANEF Tracker Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.useLanguageServer": true,
+        "go.gopls": {
+          "formatting.gofumpt": true
+        }
+      },
+      "extensions": [
+        "golang.go",
+        "alexcvzz.vscode-sqlite",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

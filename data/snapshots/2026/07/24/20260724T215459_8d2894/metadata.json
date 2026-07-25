@@ -1,0 +1,285 @@
+{
+  "application_id": "9403202606060608993",
+  "created_at": "2026-07-24T21:54:59.867122+02:00",
+  "domain": {
+    "id": "9403202606060608993",
+    "numero_demande": "9403202606060608993",
+    "foreigner_id": "9929006580",
+    "legal_category": "E1",
+    "regulatory_reference": "1202",
+    "status": {
+      "code": "TITRE_A_FABRIQUER",
+      "label": "Residence Permit in Production",
+      "description": "The decision has been approved and the residence permit card has entered the physical manufacturing stage.",
+      "severity": "HIGH"
+    },
+    "processing_site": "9403",
+    "collection_site": "9403",
+    "version": 56,
+    "submitted_at": "0001-01-01T00:00:00Z",
+    "updated_at": "2026-07-24T21:54:59.866159+02:00",
+    "documents": [
+      {
+        "id": "6a23e9d4f19cc7fb61911be7",
+        "name": "Attestation de Dépôt",
+        "type": "PDF",
+        "url": "",
+        "created_at": "2026-07-24T21:54:59.866173+02:00"
+      }
+    ],
+    "raw_payload": {
+      "_created": "2026-06-06T07:54:29.881000+00:00",
+      "_updated": "2026-07-24T08:48:33.245000+00:00",
+      "_version": 56,
+      "attestation_depot": {
+        "id": "6a23e9d4f19cc7fb61911be7",
+        "name": "CONFIRMATION_DEMANDE_TITRE_SEJOUR_9929006580_20260606.pdf"
+      },
+      "categorie_juridique": "E1",
+      "date_depot": "2026-06-06T09:35:16.496000+00:00",
+      "flags": {
+        "agdref_flags": {
+          "agdref_update_counter": 5,
+          "biometrie_update_counter": 1,
+          "biometrie_update_failed": false,
+          "cjn_update_counter": 1,
+          "cjn_update_statut": "UPDATED",
+          "creation_demande_counter": 0
+        },
+        "examen_formel_valide": true,
+        "is_renouvellement_exact": true,
+        "justificatifs_confirmes": true
+      },
+      "formulaire": "ETU",
+      "informations_personnelles": {
+        "adresse": {
+          "code_insee": "94016",
+          "code_postal": "94230",
+          "numero_voie": "1",
+          "ville": "CACHAN",
+          "voie": "Rue CAMILLE DESMOULINS"
+        },
+        "pays": "FRANCE",
+        "situation_familiale": "CELIBATAIRE",
+        "telephone": "0745564400"
+      },
+      "instruction": {
+        "conclusion_instruction": "Décision validée"
+      },
+      "is_meme_motif": true,
+      "is_pre_instruction_persee": false,
+      "justificatifs": [
+        {
+          "fichier": {
+            "id": "6a23d3b525af19f8139bc458",
+            "name": "JAIN_ARIHANT.pdf"
+          },
+          "id": "6a23d3b525af19f8139bc45c",
+          "type": "TITRE_SEJOUR"
+        },
+        {
+          "fichier": {
+            "id": "6a23d4a0566800ae93f1e62f",
+            "name": "EntryStamp.jpg"
+          },
+          "id": "6a23d4a1566800ae93f1e633",
+          "type": "PASSEPORT"
+        },
+        {
+          "fichier": {
+            "id": "6a23d4b6c2c3bb7e2203b1ea",
+            "name": "Front_Back_merged.pdf"
+          },
+          "id": "6a23d4b6c2c3bb7e2203b1ee",
+          "type": "PASSEPORT"
+        },
+        {
+          "fichier": {
+            "id": "6a23d4c825af19f8139bc4bc",
+            "name": "France_VISA.pdf"
+          },
+          "id": "6a23d4c825af19f8139bc4c0",
+          "type": "PASSEPORT"
+        },
+        {
+          "fichier": {
+            "id": "6a23d697566800ae93f1e6ac",
+            "name": "Signed-ContratDEngage.pdf"
+          },
+          "id": "6a23d697566800ae93f1e6b0",
+          "type": "CONTRAT_ENGAGEMENT"
+        },
+        {
+          "fichier": {
+            "id": "6a23d6c4dbd501c11fc47f6e",
+            "name": "Rent_Contract_.pdf"
+          },
+          "id": "6a23d6c5dbd501c11fc47f72",
+          "type": "JUSTIFICATIF_DOMICILE"
+        },
+        {
+          "fichier": {
+            "id": "6a23d6e5d89f555cb5944ae0",
+            "name": "IM25F3062_SE_Enrollment_Jain_Arihant.pdf"
+          },
+          "id": "6a23d6e5d89f555cb5944ae4",
+          "type": "CERTIFICAT_INSCRIPTION"
+        },
+        {
+          "fichier": {
+            "id": "6a23d6f367e5103ac795e06d",
+            "name": "CERTIFICAT_DE_SCOLARITE.pdf"
+          },
+          "id": "6a23d6f367e5103ac795e071",
+          "type": "CERTIFICAT_INSCRIPTION"
+        },
+        {
+          "fichier": {
+            "id": "6a23d6ff074972d5df781453",
+            "name": "studentcertificate_2362_First_attendance_certificate.pdf"
+          },
+          "id": "6a23d6ff074972d5df781457",
+          "type": "CERTIFICAT_INSCRIPTION"
+        },
+        {
+          "fichier": {
+            "id": "6a23d7e4074972d5df7814a5",
+            "name": "Account_Information-_June2026.pdf"
+          },
+          "id": "6a23d7e4074972d5df7814a9",
+          "type": "JUSTIFICATIF_DOMICILE"
+        },
+        {
+          "fichier": {
+            "id": "6a23d858f3c1f96a2983e5cb",
+            "name": "Transcript_-_S1.pdf"
+          },
+          "id": "6a23d858f3c1f96a2983e5cf",
+          "type": "RELEVE_NOTES"
+        },
+        {
+          "fichier": {
+            "id": "6a23d86ddbd501c11fc47fd3",
+            "name": "studentcertificate_2362_First_attendance_certificate.pdf"
+          },
+          "id": "6a23d86ddbd501c11fc47fd7",
+          "type": "ATTESTATION_REUSSITE"
+        },
+        {
+          "fichier": {
+            "id": "6a23db7576f561b63cde9930",
+            "name": "VIREMENT_TIERS_RECU_-_Avril26.pdf"
+          },
+          "id": "6a23db7676f561b63cde9934",
+          "type": "RESSOURCES_PRIS_EN_CHARGE"
+        },
+        {
+          "fichier": {
+            "id": "6a23db76675acf5769194a9e",
+            "name": "VIREMENT_TIERS_RECU_-_Sept25.pdf"
+          },
+          "id": "6a23db76675acf5769194aa2",
+          "type": "RESSOURCES_PRIS_EN_CHARGE"
+        },
+        {
+          "fichier": {
+            "id": "6a23dc1936f624b2de711578",
+            "name": "Promo2027ConventionStage_ArihantJAIN_AllSigned.pdf"
+          },
+          "id": "6a23dc1a36f624b2de71157c",
+          "type": "RESSOURCES_SALARIE"
+        },
+        {
+          "fichier": {
+            "id": "6a23dc2a0e9a513a9864b0ec",
+            "name": "Releve_De_Compte_Cheques_-_Sep25-Avr26.pdf"
+          },
+          "id": "6a23dc2b0e9a513a9864b0f0",
+          "type": "RESSOURCES_SUFFISANTES"
+        },
+        {
+          "fichier": {
+            "id": "6a23de9e3359b9cbc519389e",
+            "name": "Signed_AttestationDePr.pdf"
+          },
+          "id": "6a23de9e3359b9cbc51938a2",
+          "type": "RESSOURCES_PRIS_EN_CHARGE"
+        },
+        {
+          "fichier": {
+            "id": "6a23e9385809b4c6f3a4c29e",
+            "name": "9PMT8T250606112425IC06-photo.jpeg"
+          },
+          "id": "6a23e9385809b4c6f3a4c2a2",
+          "type": "PHOTOGRAPHIE_IDENTITE"
+        },
+        {
+          "fichier": {
+            "id": "6a23e9395809b4c6f3a4c2a5",
+            "name": "9PMT8T250606112425IC06-signature.png"
+          },
+          "id": "6a23e9395809b4c6f3a4c2a9",
+          "type": "SIGNATURE"
+        },
+        {
+          "fichier": {
+            "id": "6a61e04197f050b2c096f482",
+            "name": "Attestation_Banque_BNP_Paribas_2026.pdf"
+          },
+          "id": "6a4d021e96b4cdddda8d3b09",
+          "type": "RESSOURCES_PRIS_EN_CHARGE"
+        }
+      ],
+      "liens_familiaux": {
+        "enfants_en_france": false,
+        "marie": false
+      },
+      "motif_scolaire": {
+        "annee_courante": {
+          "annee_debut": 2025,
+          "annee_fin": 2026,
+          "cycle_etudes": "MASTER",
+          "diplome": "Masters",
+          "discipline": "SCIENCE_INGENIEUR",
+          "niveau_etudes": "M2",
+          "nom_etablissement": "École pour l’informatique et les techniques avancées (EPITA)",
+          "statut_resultat": "VALIDEE",
+          "type_etablissement": "ECOLE_INGENIEUR"
+        },
+        "annee_suivante": {
+          "annee_debut": 2026,
+          "annee_fin": 2027,
+          "cycle_etudes": "MASTER",
+          "diplome": "Masters",
+          "discipline": "SCIENCE_INGENIEUR",
+          "has_programme_mobilite": false,
+          "niveau_etudes": "M2",
+          "nom_etablissement": "École pour l’informatique et les techniques avancées (EPITA)",
+          "type_etablissement": "ECOLE_INGENIEUR"
+        },
+        "etudiant_actuel": true
+      },
+      "numero_demande": "9403202606060608993",
+      "observations_demandeur": "Bonjour, j'ai également décroché un stage qui débute en août et j'ai signé la convention de stage. Le salaire est de 1,800 euros ; je l'ai joint dans la section « Trois derniers bulletins de salaire » car il n'y avait pas de précision à ce sujet. Merci de votre compréhension.",
+      "reference_reglementaire": "1202",
+      "ressources": {
+        "heberge_gratuitement": false,
+        "ressources_financieres": [
+          {
+            "montant": 615,
+            "origine": "RESSOURCES_PERSONNELLES"
+          }
+        ]
+      },
+      "site_retrait": "9403",
+      "site_traitement": "9403",
+      "statut": "TITRE_A_FABRIQUER",
+      "type_demande_sejour": "RENOUVELLEMENT",
+      "variables_titre": {
+        "mobilite": false
+      }
+    },
+    "raw_json": "eyJzdGF0dXQiOiAiVElUUkVfQV9GQUJSSVFVRVIiLCAic2l0ZV90cmFpdGVtZW50IjogIjk0MDMiLCAic2l0ZV9yZXRyYWl0IjogIjk0MDMiLCAianVzdGlmaWNhdGlmcyI6IFt7ImlkIjogIjZhMjNkM2I1MjVhZjE5ZjgxMzliYzQ1YyIsICJ0eXBlIjogIlRJVFJFX1NFSk9VUiIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDNiNTI1YWYxOWY4MTM5YmM0NTgiLCAibmFtZSI6ICJKQUlOX0FSSUhBTlQucGRmIn19LCB7ImlkIjogIjZhMjNkNGExNTY2ODAwYWU5M2YxZTYzMyIsICJ0eXBlIjogIlBBU1NFUE9SVCIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDRhMDU2NjgwMGFlOTNmMWU2MmYiLCAibmFtZSI6ICJFbnRyeVN0YW1wLmpwZyJ9fSwgeyJpZCI6ICI2YTIzZDRiNmMyYzNiYjdlMjIwM2IxZWUiLCAidHlwZSI6ICJQQVNTRVBPUlQiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2Q0YjZjMmMzYmI3ZTIyMDNiMWVhIiwgIm5hbWUiOiAiRnJvbnRfQmFja19tZXJnZWQucGRmIn19LCB7ImlkIjogIjZhMjNkNGM4MjVhZjE5ZjgxMzliYzRjMCIsICJ0eXBlIjogIlBBU1NFUE9SVCIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDRjODI1YWYxOWY4MTM5YmM0YmMiLCAibmFtZSI6ICJGcmFuY2VfVklTQS5wZGYifX0sIHsiaWQiOiAiNmEyM2Q2OTc1NjY4MDBhZTkzZjFlNmIwIiwgInR5cGUiOiAiQ09OVFJBVF9FTkdBR0VNRU5UIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNkNjk3NTY2ODAwYWU5M2YxZTZhYyIsICJuYW1lIjogIlNpZ25lZC1Db250cmF0REVuZ2FnZS5wZGYifX0sIHsiaWQiOiAiNmEyM2Q2YzVkYmQ1MDFjMTFmYzQ3ZjcyIiwgInR5cGUiOiAiSlVTVElGSUNBVElGX0RPTUlDSUxFIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNkNmM0ZGJkNTAxYzExZmM0N2Y2ZSIsICJuYW1lIjogIlJlbnRfQ29udHJhY3RfLnBkZiJ9fSwgeyJpZCI6ICI2YTIzZDZlNWQ4OWY1NTVjYjU5NDRhZTQiLCAidHlwZSI6ICJDRVJUSUZJQ0FUX0lOU0NSSVBUSU9OIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNkNmU1ZDg5ZjU1NWNiNTk0NGFlMCIsICJuYW1lIjogIklNMjVGMzA2Ml9TRV9FbnJvbGxtZW50X0phaW5fQXJpaGFudC5wZGYifX0sIHsiaWQiOiAiNmEyM2Q2ZjM2N2U1MTAzYWM3OTVlMDcxIiwgInR5cGUiOiAiQ0VSVElGSUNBVF9JTlNDUklQVElPTiIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDZmMzY3ZTUxMDNhYzc5NWUwNmQiLCAibmFtZSI6ICJDRVJUSUZJQ0FUX0RFX1NDT0xBUklURS5wZGYifX0sIHsiaWQiOiAiNmEyM2Q2ZmYwNzQ5NzJkNWRmNzgxNDU3IiwgInR5cGUiOiAiQ0VSVElGSUNBVF9JTlNDUklQVElPTiIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDZmZjA3NDk3MmQ1ZGY3ODE0NTMiLCAibmFtZSI6ICJzdHVkZW50Y2VydGlmaWNhdGVfMjM2Ml9GaXJzdF9hdHRlbmRhbmNlX2NlcnRpZmljYXRlLnBkZiJ9fSwgeyJpZCI6ICI2YTIzZDdlNDA3NDk3MmQ1ZGY3ODE0YTkiLCAidHlwZSI6ICJKVVNUSUZJQ0FUSUZfRE9NSUNJTEUiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2Q3ZTQwNzQ5NzJkNWRmNzgxNGE1IiwgIm5hbWUiOiAiQWNjb3VudF9JbmZvcm1hdGlvbi1fSnVuZTIwMjYucGRmIn19LCB7ImlkIjogIjZhMjNkODU4ZjNjMWY5NmEyOTgzZTVjZiIsICJ0eXBlIjogIlJFTEVWRV9OT1RFUyIsICJmaWNoaWVyIjogeyJpZCI6ICI2YTIzZDg1OGYzYzFmOTZhMjk4M2U1Y2IiLCAibmFtZSI6ICJUcmFuc2NyaXB0Xy1fUzEucGRmIn19LCB7ImlkIjogIjZhMjNkODZkZGJkNTAxYzExZmM0N2ZkNyIsICJ0eXBlIjogIkFUVEVTVEFUSU9OX1JFVVNTSVRFIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNkODZkZGJkNTAxYzExZmM0N2ZkMyIsICJuYW1lIjogInN0dWRlbnRjZXJ0aWZpY2F0ZV8yMzYyX0ZpcnN0X2F0dGVuZGFuY2VfY2VydGlmaWNhdGUucGRmIn19LCB7ImlkIjogIjZhMjNkYjc2NzZmNTYxYjYzY2RlOTkzNCIsICJ0eXBlIjogIlJFU1NPVVJDRVNfUFJJU19FTl9DSEFSR0UiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2RiNzU3NmY1NjFiNjNjZGU5OTMwIiwgIm5hbWUiOiAiVklSRU1FTlRfVElFUlNfUkVDVV8tX0F2cmlsMjYucGRmIn19LCB7ImlkIjogIjZhMjNkYjc2Njc1YWNmNTc2OTE5NGFhMiIsICJ0eXBlIjogIlJFU1NPVVJDRVNfUFJJU19FTl9DSEFSR0UiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2RiNzY2NzVhY2Y1NzY5MTk0YTllIiwgIm5hbWUiOiAiVklSRU1FTlRfVElFUlNfUkVDVV8tX1NlcHQyNS5wZGYifX0sIHsiaWQiOiAiNmEyM2RjMWEzNmY2MjRiMmRlNzExNTdjIiwgInR5cGUiOiAiUkVTU09VUkNFU19TQUxBUklFIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNkYzE5MzZmNjI0YjJkZTcxMTU3OCIsICJuYW1lIjogIlByb21vMjAyN0NvbnZlbnRpb25TdGFnZV9BcmloYW50SkFJTl9BbGxTaWduZWQucGRmIn19LCB7ImlkIjogIjZhMjNkYzJiMGU5YTUxM2E5ODY0YjBmMCIsICJ0eXBlIjogIlJFU1NPVVJDRVNfU1VGRklTQU5URVMiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2RjMmEwZTlhNTEzYTk4NjRiMGVjIiwgIm5hbWUiOiAiUmVsZXZlX0RlX0NvbXB0ZV9DaGVxdWVzXy1fU2VwMjUtQXZyMjYucGRmIn19LCB7ImlkIjogIjZhMjNkZTllMzM1OWI5Y2JjNTE5MzhhMiIsICJ0eXBlIjogIlJFU1NPVVJDRVNfUFJJU19FTl9DSEFSR0UiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2RlOWUzMzU5YjljYmM1MTkzODllIiwgIm5hbWUiOiAiU2lnbmVkX0F0dGVzdGF0aW9uRGVQci5wZGYifX0sIHsiaWQiOiAiNmEyM2U5Mzg1ODA5YjRjNmYzYTRjMmEyIiwgInR5cGUiOiAiUEhPVE9HUkFQSElFX0lERU5USVRFIiwgImZpY2hpZXIiOiB7ImlkIjogIjZhMjNlOTM4NTgwOWI0YzZmM2E0YzI5ZSIsICJuYW1lIjogIjlQTVQ4VDI1MDYwNjExMjQyNUlDMDYtcGhvdG8uanBlZyJ9fSwgeyJpZCI6ICI2YTIzZTkzOTU4MDliNGM2ZjNhNGMyYTkiLCAidHlwZSI6ICJTSUdOQVRVUkUiLCAiZmljaGllciI6IHsiaWQiOiAiNmEyM2U5Mzk1ODA5YjRjNmYzYTRjMmE1IiwgIm5hbWUiOiAiOVBNVDhUMjUwNjA2MTEyNDI1SUMwNi1zaWduYXR1cmUucG5nIn19LCB7ImlkIjogIjZhNGQwMjFlOTZiNGNkZGRkYThkM2IwOSIsICJ0eXBlIjogIlJFU1NPVVJDRVNfUFJJU19FTl9DSEFSR0UiLCAiZmljaGllciI6IHsiaWQiOiAiNmE2MWUwNDE5N2YwNTBiMmMwOTZmNDgyIiwgIm5hbWUiOiAiQXR0ZXN0YXRpb25fQmFucXVlX0JOUF9QYXJpYmFzXzIwMjYucGRmIn19XSwgImZsYWdzIjogeyJqdXN0aWZpY2F0aWZzX2NvbmZpcm1lcyI6IHRydWUsICJleGFtZW5fZm9ybWVsX3ZhbGlkZSI6IHRydWUsICJhZ2RyZWZfZmxhZ3MiOiB7ImFnZHJlZl91cGRhdGVfY291bnRlciI6IDUsICJjam5fdXBkYXRlX2NvdW50ZXIiOiAxLCAiY2puX3VwZGF0ZV9zdGF0dXQiOiAiVVBEQVRFRCIsICJiaW9tZXRyaWVfdXBkYXRlX2NvdW50ZXIiOiAxLCAiYmlvbWV0cmllX3VwZGF0ZV9mYWlsZWQiOiBmYWxzZSwgImNyZWF0aW9uX2RlbWFuZGVfY291bnRlciI6IDB9LCAiaXNfcmVub3V2ZWxsZW1lbnRfZXhhY3QiOiB0cnVlfSwgImZvcm11bGFpcmUiOiAiRVRVIiwgInR5cGVfZGVtYW5kZV9zZWpvdXIiOiAiUkVOT1VWRUxMRU1FTlQiLCAiaW5mb3JtYXRpb25zX3BlcnNvbm5lbGxlcyI6IHsic2l0dWF0aW9uX2ZhbWlsaWFsZSI6ICJDRUxJQkFUQUlSRSIsICJhZHJlc3NlIjogeyJudW1lcm9fdm9pZSI6ICIxIiwgInZvaWUiOiAiUnVlIENBTUlMTEUgREVTTU9VTElOUyIsICJjb2RlX3Bvc3RhbCI6ICI5NDIzMCIsICJjb2RlX2luc2VlIjogIjk0MDE2IiwgInZpbGxlIjogIkNBQ0hBTiJ9LCAidGVsZXBob25lIjogIjA3NDU1NjQ0MDAiLCAicGF5cyI6ICJGUkFOQ0UifSwgInJlZmVyZW5jZV9yZWdsZW1lbnRhaXJlIjogIjEyMDIiLCAiaXNfbWVtZV9tb3RpZiI6IHRydWUsICJkYXRlX2RlcG90IjogIjIwMjYtMDYtMDZUMDk6MzU6MTYuNDk2MDAwKzAwOjAwIiwgIm51bWVyb19kZW1hbmRlIjogIjk0MDMyMDI2MDYwNjA2MDg5OTMiLCAiYXR0ZXN0YXRpb25fZGVwb3QiOiB7ImlkIjogIjZhMjNlOWQ0ZjE5Y2M3ZmI2MTkxMWJlNyIsICJuYW1lIjogIkNPTkZJUk1BVElPTl9ERU1BTkRFX1RJVFJFX1NFSk9VUl85OTI5MDA2NTgwXzIwMjYwNjA2LnBkZiJ9LCAiaW5zdHJ1Y3Rpb24iOiB7ImNvbmNsdXNpb25faW5zdHJ1Y3Rpb24iOiAiRFx1MDBlOWNpc2lvbiB2YWxpZFx1MDBlOWUifSwgIm9ic2VydmF0aW9uc19kZW1hbmRldXIiOiAiQm9uam91ciwgaidhaSBcdTAwZTlnYWxlbWVudCBkXHUwMGU5Y3JvY2hcdTAwZTkgdW4gc3RhZ2UgcXVpIGRcdTAwZTlidXRlIGVuIGFvXHUwMGZidCBldCBqJ2FpIHNpZ25cdTAwZTkgbGEgY29udmVudGlvbiBkZSBzdGFnZS4gTGUgc2FsYWlyZSBlc3QgZGUgMSw4MDAgZXVyb3NcdTAwYTA7IGplIGwnYWkgam9pbnQgZGFucyBsYSBzZWN0aW9uIFx1MDBhYlx1MDBhMFRyb2lzIGRlcm5pZXJzIGJ1bGxldGlucyBkZSBzYWxhaXJlXHUwMGEwXHUwMGJiIGNhciBpbCBuJ3kgYXZhaXQgcGFzIGRlIHByXHUwMGU5Y2lzaW9uIFx1MDBlMCBjZSBzdWpldC4gTWVyY2kgZGUgdm90cmUgY29tcHJcdTAwZTloZW5zaW9uLiIsICJjYXRlZ29yaWVfanVyaWRpcXVlIjogIkUxIiwgImlzX3ByZV9pbnN0cnVjdGlvbl9wZXJzZWUiOiBmYWxzZSwgIl92ZXJzaW9uIjogNTYsICJfY3JlYXRlZCI6ICIyMDI2LTA2LTA2VDA3OjU0OjI5Ljg4MTAwMCswMDowMCIsICJfdXBkYXRlZCI6ICIyMDI2LTA3LTI0VDA4OjQ4OjMzLjI0NTAwMCswMDowMCIsICJ2YXJpYWJsZXNfdGl0cmUiOiB7Im1vYmlsaXRlIjogZmFsc2V9LCAibW90aWZfc2NvbGFpcmUiOiB7ImV0dWRpYW50X2FjdHVlbCI6IHRydWUsICJhbm5lZV9jb3VyYW50ZSI6IHsidHlwZV9ldGFibGlzc2VtZW50IjogIkVDT0xFX0lOR0VOSUVVUiIsICJub21fZXRhYmxpc3NlbWVudCI6ICJcdTAwYzljb2xlIHBvdXIgbFx1MjAxOWluZm9ybWF0aXF1ZSBldCBsZXMgdGVjaG5pcXVlcyBhdmFuY1x1MDBlOWVzIChFUElUQSkiLCAiY3ljbGVfZXR1ZGVzIjogIk1BU1RFUiIsICJuaXZlYXVfZXR1ZGVzIjogIk0yIiwgImRpcGxvbWUiOiAiTWFzdGVycyIsICJkaXNjaXBsaW5lIjogIlNDSUVOQ0VfSU5HRU5JRVVSIiwgInN0YXR1dF9yZXN1bHRhdCI6ICJWQUxJREVFIiwgImFubmVlX2RlYnV0IjogMjAyNSwgImFubmVlX2ZpbiI6IDIwMjZ9LCAiYW5uZWVfc3VpdmFudGUiOiB7Imhhc19wcm9ncmFtbWVfbW9iaWxpdGUiOiBmYWxzZSwgInR5cGVfZXRhYmxpc3NlbWVudCI6ICJFQ09MRV9JTkdFTklFVVIiLCAibm9tX2V0YWJsaXNzZW1lbnQiOiAiXHUwMGM5Y29sZSBwb3VyIGxcdTIwMTlpbmZvcm1hdGlxdWUgZXQgbGVzIHRlY2huaXF1ZXMgYXZhbmNcdTAwZTllcyAoRVBJVEEpIiwgImN5Y2xlX2V0dWRlcyI6ICJNQVNURVIiLCAibml2ZWF1X2V0dWRlcyI6ICJNMiIsICJkaXBsb21lIjogIk1hc3RlcnMiLCAiZGlzY2lwbGluZSI6ICJTQ0lFTkNFX0lOR0VOSUVVUiIsICJhbm5lZV9kZWJ1dCI6IDIwMjYsICJhbm5lZV9maW4iOiAyMDI3fX0sICJyZXNzb3VyY2VzIjogeyJyZXNzb3VyY2VzX2ZpbmFuY2llcmVzIjogW3sibW9udGFudCI6IDYxNS4wLCAib3JpZ2luZSI6ICJSRVNTT1VSQ0VTX1BFUlNPTk5FTExFUyJ9XSwgImhlYmVyZ2VfZ3JhdHVpdGVtZW50IjogZmFsc2V9LCAibGllbnNfZmFtaWxpYXV4IjogeyJtYXJpZSI6IGZhbHNlLCAiZW5mYW50c19lbl9mcmFuY2UiOiBmYWxzZX19Cg=="
+  },
+  "snapshot_id": "20260724T215459_8d2894"
+}

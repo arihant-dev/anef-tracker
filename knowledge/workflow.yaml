@@ -1,0 +1,49 @@
+# ANEF Workflow Graph, State Transitions, and Historical Duration Statistics
+workflow:
+  DEMANDE_SOUMISE:
+    next_possible:
+      - DOSSIER_DEPOSE
+      - VALIDATION_FORMELLE
+    typical_duration_days_min: 1
+    typical_duration_days_max: 7
+    observed_count: 350
+
+  DOSSIER_DEPOSE:
+    next_possible:
+      - VALIDATION_FORMELLE
+      - INSTRUCTION_EN_COURS
+    typical_duration_days_min: 2
+    typical_duration_days_max: 14
+    observed_count: 320
+
+  VALIDATION_FORMELLE:
+    next_possible:
+      - INSTRUCTION_EN_COURS
+      - DEMANDE_INCOMPLETE
+    typical_duration_days_min: 3
+    typical_duration_days_max: 21
+    observed_count: 290
+
+  INSTRUCTION_EN_COURS:
+    next_possible:
+      - DEMANDE_INCOMPLETE
+      - DECISION_VALIDEE
+      - TITRE_A_FABRIQUER
+    typical_duration_days_min: 14
+    typical_duration_days_max: 90
+    observed_count: 510
+
+  TITRE_A_FABRIQUER:
+    next_possible:
+      - TITRE_DISPONIBLE
+      - CONVOCATION_GENEREE
+    typical_duration_days_min: 3
+    typical_duration_days_max: 14
+    observed_count: 420
+
+  TITRE_DISPONIBLE:
+    next_possible:
+      - CLOTURE
+    typical_duration_days_min: 1
+    typical_duration_days_max: 30
+    observed_count: 380

@@ -1,0 +1,373 @@
+fields:
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: _created
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: _updated
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: _version
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: attestation_depot.id
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: attestation_depot.name
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: categorie_juridique
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: date_depot
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.agdref_update_counter
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.biometrie_update_counter
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.biometrie_update_failed
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.cjn_update_counter
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.cjn_update_statut
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.agdref_flags.creation_demande_counter
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.examen_formel_valide
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.is_renouvellement_exact
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: flags.justificatifs_confirmes
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: formulaire
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.adresse.code_insee
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.adresse.code_postal
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.adresse.numero_voie
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.adresse.ville
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.adresse.voie
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.pays
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.situation_familiale
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: informations_personnelles.telephone
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: instruction.conclusion_instruction
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: is_meme_motif
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: is_pre_instruction_persee
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: justificatifs
+      type: '[]interface {}'
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: liens_familiaux.enfants_en_france
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: liens_familiaux.marie
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.annee_debut
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.annee_fin
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.cycle_etudes
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.diplome
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.discipline
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.niveau_etudes
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.nom_etablissement
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.statut_resultat
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_courante.type_etablissement
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.annee_debut
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.annee_fin
+      type: float64
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.cycle_etudes
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.diplome
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.discipline
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.has_programme_mobilite
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.niveau_etudes
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.nom_etablissement
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.annee_suivante.type_etablissement
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: motif_scolaire.etudiant_actuel
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: numero_demande
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: observations_demandeur
+      type: string
+    - confidence: 1
+      endpoint: https://example.com/api
+      first_seen: "2026-07-24T22:06:26+02:00"
+      occurrences: 1
+      path: production_site
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: reference_reglementaire
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: ressources.heberge_gratuitement
+      type: bool
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: ressources.ressources_financieres
+      type: '[]interface {}'
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: site_retrait
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: site_traitement
+      type: string
+    - confidence: 1
+      endpoint: https://example.com/api
+      first_seen: "2026-07-24T22:06:26+02:00"
+      occurrences: 1
+      path: statut
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: statut
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: type_demande_sejour
+      type: string
+    - confidence: 1
+      endpoint: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+      first_seen: "2026-07-24T22:07:05+02:00"
+      occurrences: 1
+      path: variables_titre.mobilite
+      type: bool
