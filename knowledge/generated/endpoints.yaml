@@ -1,0 +1,19 @@
+endpoints:
+    - first_seen: "2026-07-24T22:19:23+02:00"
+      last_seen: "2026-07-24T22:19:23+02:00"
+      method: GET
+      occurrences: 14
+      status_code: 401
+      url: https://administration-etrangers-en-france.interieur.gouv.fr/api/sejour/usager/demande_sejour
+    - first_seen: "2026-07-24T22:19:23+02:00"
+      last_seen: "2026-07-24T22:19:23+02:00"
+      method: GET
+      occurrences: 2
+      status_code: 200
+      url: https://administration-etrangers-en-france.interieur.gouv.fr/api/usager/moi?is_by_nature_titre=true&only_tse=true
+    - first_seen: "2026-07-24T22:19:23+02:00"
+      last_seen: "2026-07-24T22:19:23+02:00"
+      method: GET
+      occurrences: 2
+      status_code: 200
+      url: https://example.com/api/test

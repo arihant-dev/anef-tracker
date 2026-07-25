@@ -1,0 +1,11 @@
+title = "Gitleaks config for ANEF Tracker"
+
+[allowlist]
+description = "Allowlist synthetic mock IDs and test tokens"
+regexes = [
+    '''9999999999''',
+    '''DOC-PDF-001''',
+    '''TEST_BEARER''',
+    '''TEST_JWT_TOKEN''',
+    '''mock_refresh_token'''
+]

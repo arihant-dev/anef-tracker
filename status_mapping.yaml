@@ -1,0 +1,72 @@
+# ANEF Status Mapping dictionary
+# Translates internal ANEF workflow states into human-readable descriptions
+
+statuses:
+  DEMANDE_SOUMISE:
+    label: "Application Submitted"
+    description: "Your application has been registered successfully and is awaiting preliminary intake."
+    severity_level: "LOW"
+
+  DOSSIER_DEPOSE:
+    label: "Dossier Deposited"
+    description: "Application files and supporting documents have been received by the administrative portal."
+    severity_level: "LOW"
+
+  VALIDATION_FORMELLE:
+    label: "Formal Validation Complete"
+    description: "Initial administrative completeness check passed. Dossier queued for prefecture instruction."
+    severity_level: "MEDIUM"
+
+  INSTRUCTION_EN_COURS:
+    label: "Instruction Started"
+    description: "Your application is actively under review by an officer at your prefecture."
+    severity_level: "MEDIUM"
+
+  DEMANDE_INCOMPLETE:
+    label: "Additional Information Required"
+    description: "The prefecture requires missing or updated documents. Action required on portal."
+    severity_level: "HIGH"
+
+  DECISION_VALIDEE:
+    label: "Decision Validated"
+    description: "A formal decision on your application has been validated by prefecture leadership."
+    severity_level: "HIGH"
+
+  TITRE_A_FABRIQUER:
+    label: "Residence Permit in Production"
+    description: "The decision has been approved and the residence permit card has entered the physical manufacturing stage."
+    severity_level: "HIGH"
+
+  TITRE_DISPONIBLE:
+    label: "Card Ready for Collection"
+    description: "Your residence permit card has arrived at the collection site (prefecture/sub-prefecture)."
+    severity_level: "CRITICAL"
+
+  CONVOCATION_GENEREE:
+    label: "Appointment / Convocation Generated"
+    description: "A convocation notice for fingerprinting or permit retrieval has been issued."
+    severity_level: "CRITICAL"
+
+  CLOTURE:
+    label: "Dossier Closed"
+    description: "The application process is finalized."
+    severity_level: "MEDIUM"
+
+known_fields:
+  - statut
+  - instruction
+  - flags
+  - agdref_flags
+  - _version
+  - _updated
+  - _created
+  - attestation_depot
+  - site_retrait
+  - site_traitement
+  - numero_demande
+  - motif_scolaire
+  - ressources
+  - justificatifs
+  - variables_titre
+  - categorie_juridique
+  - reference_reglementaire

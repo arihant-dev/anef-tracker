@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  anef-watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: anef-tracker-watcher
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./backups:/app/backups
+    environment:
+      - LOG_LEVEL=info
+      - DATABASE_PATH=/app/data/anef.db
+    command: ["watch", "--interval", "360"]

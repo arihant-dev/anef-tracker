@@ -1,0 +1,14 @@
+{
+  "numero_demande": "9999999999",
+  "statut": "TITRE_A_FABRIQUER",
+  "categorie_juridique": "ETUDIANT",
+  "reference_reglementaire": "R421-1",
+  "site_traitement": "PREFECTURE_92",
+  "site_retrait": "PREFECTURE_NANTERRE",
+  "_version": 56,
+  "_updated": "2026-07-24T10:00:00Z",
+  "attestation_depot": {
+    "id": "DOC-PDF-001",
+    "url": "/api/dossier/documents/DOC-PDF-001"
+  }
+}

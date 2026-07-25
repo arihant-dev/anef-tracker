@@ -1,0 +1,13 @@
+{
+  "version": "0.9.0",
+  "description": "Private, Multi-Application Evidence Vault & Workflow Intelligence Platform for ANEF",
+  "homepage": "https://github.com/arihant-dev/anef-tracker",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/arihant-dev/anef-tracker/releases/download/v0.9.0/anef-tracker_0.9.0_windows_amd64.zip",
+      "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "bin": "anef.exe"
+}

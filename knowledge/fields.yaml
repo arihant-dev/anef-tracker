@@ -1,0 +1,54 @@
+# Known & Discovered ANEF API Fields Knowledge Base
+fields:
+  statut:
+    type: "string"
+    description: "Current high-level workflow status code of the residence permit application."
+    confidence: "High"
+  instruction:
+    type: "object"
+    description: "Contains instruction stage metadata, agent comments, and validation flags."
+    confidence: "High"
+  flags:
+    type: "object"
+    description: "Internal portal feature and workflow flags."
+    confidence: "High"
+  agdref_flags:
+    type: "object"
+    description: "Flags synchronized with AGDREF (National Foreigner Database)."
+    confidence: "Medium"
+  _version:
+    type: "number"
+    description: "Optimistic locking entity version counter. Increments on dossier update."
+    confidence: "High"
+  _updated:
+    type: "string"
+    description: "ISO8601 timestamp of last dossier state modification."
+    confidence: "High"
+  _created:
+    type: "string"
+    description: "ISO8601 timestamp of dossier submission."
+    confidence: "High"
+  attestation_depot:
+    type: "object"
+    description: "Metadata and document link for the official application deposit attestation PDF."
+    confidence: "High"
+  site_retrait:
+    type: "string"
+    description: "Prefecture or sub-prefecture location code where physical permit will be collected."
+    confidence: "High"
+  site_traitement:
+    type: "string"
+    description: "Prefecture or center code responsible for instructing the dossier."
+    confidence: "High"
+  numero_demande:
+    type: "string"
+    description: "Unique 10-digit application reference number."
+    confidence: "High"
+  categorie_juridique:
+    type: "string"
+    description: "Legal basis code for residence permit (e.g., student, talent passport, employee)."
+    confidence: "High"
+  reference_reglementaire:
+    type: "string"
+    description: "CESEDA legal article reference governing the permit category."
+    confidence: "High"

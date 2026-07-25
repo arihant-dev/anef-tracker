@@ -1,0 +1,14 @@
+# Discovered ANEF Endpoint Catalog
+endpoints:
+  - path: "/api/sejour/usager/demande_sejour"
+    method: "GET"
+    description: "Main residence permit application dossier state endpoint."
+    returns: "Dossier JSON object"
+  - path: "/api/dossier/documents"
+    method: "GET"
+    description: "Lists generated PDF attestations and uploaded supporting documents."
+    returns: "Array of document objects"
+  - path: "/api/usager/profil"
+    method: "GET"
+    description: "User profile, civil status, address, and foreign number (numéro d'étranger)."
+    returns: "User profile object"

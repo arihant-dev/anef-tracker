@@ -1,0 +1,72 @@
+# ANEF Tracker Documentation Site Configuration
+site_name: ANEF Tracker Documentation
+site_description: Private, Multi-Application Evidence Vault & Workflow Intelligence Platform for ANEF
+site_author: ANEF Tracker Project Authors
+site_url: https://arihant-dev.github.io/anef-tracker/
+
+repo_name: arihant-dev/anef-tracker
+repo_url: https://github.com/arihant-dev/anef-tracker
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quickstart: getting-started/quickstart.md
+      - Installation: getting-started/installation.md
+  - Architecture & Design:
+      - Overview: architecture/overview.md
+      - Plugin Interfaces (v1.1): architecture/plugins.md
+      - ADRs:
+          - ADR-0001 Immutable Evidence: adr/0001-immutable-evidence-model.md
+          - ADR-0002 Row-Level Isolation: adr/0002-row-level-profile-scoping.md
+          - ADR-0003 Hash-Chained Audit: adr/0003-hash-chained-audit-log.md
+          - ADR-0004 No AI Inference: adr/0004-no-ai-based-inference.md
+          - ADR-0005 Evidence Redaction: adr/0005-evidence-preserving-redaction.md
+  - Guides:
+      - Configuration: guides/configuration.md
+      - Upgrading & Migrations: guides/upgrading.md
+      - Evidence Bundles: guides/evidence-bundles.md
+  - Reference:
+      - CLI Commands: reference/cli.md
+      - Compatibility Policy: reference/compatibility.md
+      - Security Policy: security/policy.md
+  - Development:
+      - Contributing: development/contributing.md
+      - Release Checklist: development/release-checklist.md

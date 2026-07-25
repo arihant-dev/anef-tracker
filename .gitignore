@@ -1,0 +1,41 @@
+# Binaries and build output
+/bin/
+/dist/
+/exports/
+/backups/
+/tmp/
+*.exe
+*.exe?
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Databases, snapshots, and runtime data
+/data/
+/snapshots/
+*.db
+*.sqlite
+session.json
+
+# Environment variables
+.env
+.env.*
+
+# TLS/SSL Certificates & Keys
+*.pem
+*.key
+*.crt
+
+# Test and Coverage outputs
+coverage.out
+coverage.html
+sbom.spdx.json
+
+# IDE & OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
