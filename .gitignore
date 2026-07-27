@@ -37,5 +37,6 @@ sbom.spdx.json
 .DS_Store
 .idea/
 .vscode/
+.codegraph/
 *.swp
 *~

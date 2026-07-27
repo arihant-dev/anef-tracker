@@ -1,10 +1,11 @@
 # ANEF Residence Permit Tracker & Evidence-Based Workflow Intelligence Platform
 
-[![Build Status](https://github.com/arihant-dev/anef-tracker/actions/workflows/test.yml/badge.svg)](https://github.com/arihant-dev/anef-tracker/actions/workflows/test.yml)
-[![Security Analysis](https://github.com/arihant-dev/anef-tracker/actions/workflows/security.yml/badge.svg)](https://github.com/arihant-dev/anef-tracker/actions/workflows/security.yml)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/arihant-dev/anef-tracker/main?label=Go)](https://go.dev)
+[![Continuous Integration](https://github.com/arihant-dev/anef-tracker/actions/workflows/test.yml/badge.svg)](https://github.com/arihant-dev/anef-tracker/actions/workflows/test.yml)
+[![Security Audit](https://github.com/arihant-dev/anef-tracker/actions/workflows/security.yml/badge.svg)](https://github.com/arihant-dev/anef-tracker/actions/workflows/security.yml)
+[![CodeQL Analysis](https://github.com/arihant-dev/anef-tracker/actions/workflows/codeql.yml/badge.svg)](https://github.com/arihant-dev/anef-tracker/actions/workflows/codeql.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/arihant-dev/anef-tracker)](https://goreportcard.com/report/github.com/arihant-dev/anef-tracker)
+[![Release](https://img.shields.io/github/v/release/arihant-dev/anef-tracker)](https://github.com/arihant-dev/anef-tracker/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/arihant-dev/anef-tracker?include_prerelease)](https://github.com/arihant-dev/anef-tracker/releases)
 
 `anef-tracker` is a **private, multi-application evidence vault** and CLI/TUI operations assistant for tracking French residence permit applications (*Administration Numérique pour les Étrangers en France* — ANEF).
 
