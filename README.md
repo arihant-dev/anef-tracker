@@ -96,6 +96,22 @@ make build
 
 ---
 
+## Security Model
+
+| Guarantee | Status |
+|---|---|
+| Evidence immutability | ✅ |
+| Row-level profile isolation | ✅ |
+| Tamper-evident audit log | ✅ |
+| Evidence-preserving redaction | ✅ |
+| Secret & PII scanning in CI | ✅ |
+| CodeQL SAST security analysis | ✅ |
+| SBOM generation (SPDX/CycloneDX) | ✅ |
+| At-rest database encryption | Planned |
+| Secure hardware key storage | Planned |
+
+---
+
 ## License & Security
 
 - **License**: Released under the [MIT License](LICENSE).
