@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v0.9.1] - 2026-07-27
+
+### Fixed & Hardened
+- **Release Engineering & GoReleaser v2 Migration**: Migrated GoReleaser configuration to v2 syntax, enabled SBOM artifact generation, and added release asset overwrite handling (`replace_existing_artifacts`).
+- **Repository Security & Quality Gates**: Configured CodeQL SAST scanning, gitleaks secret detection, and Go vulnerability checks (`govulncheck`).
+- **Release Gating**: Mandatory `go mod verify` and full unit test suite execution before release publication.
+- **Documentation & Badges**: Repaired all README status badges and verified executable examples.
+
 ## [v0.9.0] - 2026-07-25
 
 ### Added
