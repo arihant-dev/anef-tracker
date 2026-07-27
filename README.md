@@ -61,6 +61,32 @@ make build
 
 ---
 
+## Architecture at a Glance
+
+```text
+Browser Authentication / cURL Payload
+                  │
+                  ▼
+          HTTP Log Recorder
+                  │
+                  ▼
+      Immutable Evidence Store (SQLite / JSON)
+                  │
+                  ▼
+      State Machine & Duration Analytics Engine
+                  │
+                  ▼
+      Privacy Observer & Redaction Layer
+                  │
+                  ▼
+      Cryptographic Hash-Chained Audit Log
+                  │
+                  ▼
+     CLI / 17-Tab TUI / Evidence Bundles
+```
+
+---
+
 ## Command Reference
 
 | Category | Command | Description |
