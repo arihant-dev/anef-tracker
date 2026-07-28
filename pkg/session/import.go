@@ -15,11 +15,16 @@ func PromptCurlPaste(r io.Reader) (*Session, error) {
 	}
 
 	scanner := bufio.NewScanner(r)
+	// Set 1MB max capacity for large cURL commands with long JWTs/cookies
+	const maxCapacity = 1024 * 1024
+	buf := make([]byte, 64*1024)
+	scanner.Buffer(buf, maxCapacity)
+
 	fmt.Println("\n------------------------------------------------------------")
 	fmt.Println("1. Log into ANEF in your browser")
 	fmt.Println("2. Open DevTools (F12) -> Network tab")
 	fmt.Println("3. Right click any request to ANEF -> Copy as cURL")
-	fmt.Println("4. Paste below and press [ENTER] twice:")
+	fmt.Println("4. Paste below and press [ENTER]:")
 	fmt.Println("------------------------------------------------------------")
 	fmt.Print("> ")
 
@@ -27,12 +32,28 @@ func PromptCurlPaste(r io.Reader) (*Session, error) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		trimmed := strings.TrimSpace(line)
+
 		if trimmed == "" && len(lines) > 0 {
 			break
 		}
+
 		if trimmed != "" {
 			lines = append(lines, line)
 		}
+
+		// Instant auto-parse as soon as line does not end in continuation char (\, `, ^)
+		rawSoFar := strings.Join(lines, "\n")
+		if !strings.HasSuffix(trimmed, "\\") && !strings.HasSuffix(trimmed, "`") && !strings.HasSuffix(trimmed, "^") {
+			sess, err := ParseCurl(rawSoFar)
+			if err == nil && sess != nil {
+				sess.ImportSource = ImportCurl
+				return sess, nil
+			}
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, fmt.Errorf("error reading input: %w", err)
 	}
 
 	rawInput := strings.Join(lines, "\n")
