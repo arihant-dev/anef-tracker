@@ -1,14 +1,15 @@
 package anef
 
 import (
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
+	"net/http"
+
 	v1 "github.com/arihant-dev/anef-tracker/pkg/providers/anef/v1"
 	"github.com/arihant-dev/anef-tracker/pkg/recorder"
-	"net/http"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 )
 
 type ANEFProvider = v1.ProviderV1
 
-func NewANEFProvider(client *http.Client, rec *recorder.HTTPRecorder, session *auth.CurlSession) *ANEFProvider {
-	return v1.NewProviderV1(client, rec, session)
+func NewANEFProvider(client *http.Client, rec *recorder.HTTPRecorder, sess *session.Session) *ANEFProvider {
+	return v1.NewProviderV1(client, rec, sess)
 }

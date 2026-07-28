@@ -2,16 +2,17 @@ package doctor
 
 import (
 	"fmt"
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
-	"github.com/arihant-dev/anef-tracker/pkg/db"
-	"github.com/arihant-dev/anef-tracker/pkg/evidence"
-	"github.com/arihant-dev/anef-tracker/pkg/knowledge"
-	"github.com/arihant-dev/anef-tracker/pkg/schema"
-	"github.com/arihant-dev/anef-tracker/pkg/snapshot"
 	"net/http"
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/arihant-dev/anef-tracker/pkg/db"
+	"github.com/arihant-dev/anef-tracker/pkg/evidence"
+	"github.com/arihant-dev/anef-tracker/pkg/knowledge"
+	"github.com/arihant-dev/anef-tracker/pkg/schema"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
+	"github.com/arihant-dev/anef-tracker/pkg/snapshot"
 )
 
 type CheckResult struct {
@@ -41,17 +42,17 @@ func RunDiagnostics() *DoctorReport {
 	}
 
 	// 2. Session File check
-	session, err := auth.LoadSession()
+	sess, err := session.LoadSession()
 	if err != nil {
 		report.addCheck("Session File", false, fmt.Sprintf("Session error or missing: %v", err))
 	} else {
-		report.addCheck("Session File", true, fmt.Sprintf("Active session found for user login %s", session.Login))
+		report.addCheck("Session File", true, fmt.Sprintf("Active session found for user login %s", sess.User))
 
 		// 3. Token Validity check
-		if session.IsExpired() {
+		if sess.IsExpired() {
 			report.addCheck("Token Validity", false, "JWT token expired. Use 'anef login' or refresh token")
 		} else {
-			rem := time.Until(time.Unix(session.ExpiresAt, 0))
+			rem := time.Until(sess.ExpiresAt)
 			report.addCheck("Token Validity", true, fmt.Sprintf("Token valid (expires in %s)", rem.Round(time.Second)))
 		}
 	}

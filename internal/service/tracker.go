@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 	"fmt"
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 	clientpkg "github.com/arihant-dev/anef-tracker/pkg/client"
 	"github.com/arihant-dev/anef-tracker/pkg/config"
 	"github.com/arihant-dev/anef-tracker/pkg/crawler"
@@ -26,7 +26,7 @@ import (
 
 type TrackerService struct {
 	Config    *config.Config
-	Session   *auth.CurlSession
+	Session   *session.Session
 	Store     storage.Store
 	Provider  providers.Provider
 	EventEng  *event.EventEngine
@@ -50,7 +50,7 @@ func NewTrackerService() (*TrackerService, error) {
 
 	store := storage.NewSQLiteStore(database)
 
-	session, err := auth.LoadSession()
+	session, err := session.LoadSession()
 	if err != nil {
 		log.Debug("No active session file found", "error", err)
 	}

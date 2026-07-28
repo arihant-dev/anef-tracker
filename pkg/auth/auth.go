@@ -1,99 +1,33 @@
 package auth
 
 import (
-	"fmt"
 	"net/http"
-	"strings"
-	"time"
+
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 )
 
-type AuthMethod string
+type CurlSession = session.Session
 
-const (
-	AuthMethodCurl     AuthMethod = "CURL"
-	AuthMethodBrowser  AuthMethod = "BROWSER"
-	AuthMethodKeycloak AuthMethod = "KEYCLOAK"
-	AuthMethodBearer   AuthMethod = "BEARER"
-)
-
-// Strategy defines a pluggable authentication provider interface.
-type Strategy interface {
-	Name() string
-	Authenticate() (*CurlSession, error)
-	Validate(session *CurlSession) bool
-	Refresh(session *CurlSession) (*CurlSession, error)
+func SaveSession(sess *session.Session) error {
+	return session.SaveSession(sess)
 }
 
-// AuthManager manages authentication strategies in cascade order.
-type AuthManager struct {
-	strategies []Strategy
+func LoadSession() (*session.Session, error) {
+	return session.LoadSession()
 }
 
-func NewAuthManager(strategies ...Strategy) *AuthManager {
-	return &AuthManager{strategies: strategies}
+func ParseCurl(curlCmd string) (*session.Session, error) {
+	return session.ParseCurl(curlCmd)
 }
 
-func (m *AuthManager) AuthenticateCascade() (*CurlSession, error) {
-	var lastErr error
-	for _, strat := range m.strategies {
-		sess, err := strat.Authenticate()
-		if err == nil && sess != nil {
-			return sess, nil
-		}
-		lastErr = fmt.Errorf("[%s] %v", strat.Name(), err)
-	}
-	return nil, fmt.Errorf("all auth strategies failed: %w", lastErr)
+func InjectAuthHeaders(req *http.Request, sess *session.Session) {
+	session.InjectAuthHeaders(req, sess)
 }
 
-// InjectAuthHeaders adds current session tokens & cookies to an outgoing http.Request
-func InjectAuthHeaders(req *http.Request, sess *CurlSession) {
-	if sess == nil {
-		return
-	}
-	for k, vals := range sess.Headers {
-		if strings.EqualFold(k, "Accept-Encoding") {
-			continue // Omit explicit Accept-Encoding so net/http handles transparent decompression
-		}
-		for _, v := range vals {
-			req.Header.Add(k, v)
-		}
-	}
-
-	if sess.AuthToken != "" {
-		if !hasTokenPrefix(sess.AuthToken) {
-			req.Header.Set("Authorization", "Token "+sess.AuthToken)
-		} else {
-			req.Header.Set("Authorization", sess.AuthToken)
-		}
-	}
-
-	var cookieStrs []string
-	for k, v := range sess.Cookies {
-		cookieStrs = append(cookieStrs, fmt.Sprintf("%s=%s", k, v))
-	}
-	if len(cookieStrs) > 0 {
-		req.Header.Set("Cookie", joinCookies(cookieStrs))
-	}
+func AuthenticateViaBrowser(portalURL string) (*session.Session, error) {
+	return session.AuthenticateViaBrowser(portalURL)
 }
 
-func hasTokenPrefix(token string) bool {
-	return len(token) > 6 && (token[:6] == "Token " || token[:7] == "Bearer ")
-}
-
-func joinCookies(cookies []string) string {
-	res := ""
-	for i, c := range cookies {
-		if i > 0 {
-			res += "; "
-		}
-		res += c
-	}
-	return res
-}
-
-func IsSessionExpired(sess *CurlSession) bool {
-	if sess == nil || sess.ExpiresAt == 0 {
-		return false
-	}
-	return time.Now().Unix() >= sess.ExpiresAt
+func AuthenticateWithCredentials(httpClient *http.Client, username, password string) (*session.Session, error) {
+	return session.AuthenticateWithCredentials(httpClient, username, password)
 }

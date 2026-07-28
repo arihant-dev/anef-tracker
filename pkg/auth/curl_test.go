@@ -3,7 +3,7 @@ package auth_test
 import (
 	"testing"
 
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 )
 
 func TestParseCurl(t *testing.T) {
@@ -15,7 +15,7 @@ func TestParseCurl(t *testing.T) {
 -H 'Referer: https://administration-etrangers-en-france.interieur.gouv.fr/usagers/' \
 -H 'Cookie: Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9; auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3ODQ5MjA1NzcsImV4cCI6MTc4NDkyMzI3NywibG9naW4iOiI5OTk5OTk5OTk5In0.xxx; refresh_token=mock_refresh_token; consentCookie=%7B%22necessary%22%3Atrue%7D'`
 
-	sess, err := auth.ParseCurl(curlSnippet)
+	sess, err := session.ParseCurl(curlSnippet)
 	if err != nil {
 		t.Fatalf("ParseCurl failed: %v", err)
 	}
@@ -24,8 +24,8 @@ func TestParseCurl(t *testing.T) {
 		t.Errorf("unexpected URL: %s", sess.URL)
 	}
 
-	if sess.Login != "9999999999" {
-		t.Errorf("expected login 9999999999, got %s", sess.Login)
+	if sess.User != "9999999999" {
+		t.Errorf("expected user 9999999999, got %s", sess.User)
 	}
 
 	if sess.RefreshToken != "mock_refresh_token" {

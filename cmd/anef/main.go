@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"context"
 	"flag"
 	"fmt"
@@ -9,7 +8,7 @@ import (
 	"github.com/arihant-dev/anef-tracker/internal/version"
 	"github.com/arihant-dev/anef-tracker/pkg/analytics"
 	"github.com/arihant-dev/anef-tracker/pkg/audit"
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 	"github.com/arihant-dev/anef-tracker/pkg/backup"
 	"github.com/arihant-dev/anef-tracker/pkg/config"
 	appcontext "github.com/arihant-dev/anef-tracker/pkg/context"
@@ -60,6 +59,8 @@ func main() {
 		os.Exit(ExitSuccess)
 	case "config":
 		handleConfig()
+	case "session":
+		handleSession()
 	case "login":
 		handleLogin()
 	case "fetch":
@@ -134,7 +135,8 @@ Usage:
   anef <command> [flags]
 
 Monitoring & Status Commands:
-  login                        Authenticate via Chrome DevTools cURL or credentials
+  login                        Authenticate via browser-assisted cURL import
+  session inspect|validate|doctor  Inspect active session, validate tokens & run diagnostics
   fetch                        Fetch application status, record HTTP traffic & save snapshot
   status                       Print current residence permit application status
   timeline                     Display chronological application progress timeline
@@ -183,114 +185,149 @@ Operations & System Maintenance:
   export                       Export events or schemas (CSV/JSON/YAML/Markdown)`)
 }
 
+func handleSession() {
+	if len(os.Args) >= 3 {
+		switch os.Args[2] {
+		case "inspect":
+			handleSessionInspect()
+			return
+		case "validate":
+			handleSessionValidate()
+			return
+		case "doctor":
+			handleSessionDoctor()
+			return
+		}
+	}
+	fmt.Println("Usage: anef session inspect|validate|doctor")
+}
+
+func handleSessionInspect() {
+	sess, err := session.LoadSession()
+	if err != nil {
+		fmt.Printf("✗ No active session found: %v\n", err)
+		os.Exit(ExitError)
+	}
+
+	statusStr := "Active"
+	if sess.IsExpired() {
+		statusStr = "Expired"
+	}
+
+	claims, _ := session.DecodeJWT(sess.AccessToken)
+
+	fmt.Println("=== ANEF SESSION DIAGNOSTIC ===")
+	fmt.Printf("Provider:       %s\n", sess.Provider)
+	fmt.Printf("Authentication: %s\n", statusStr)
+	fmt.Printf("User:           %s\n", sess.User)
+	if !sess.ExpiresAt.IsZero() {
+		fmt.Printf("Expiry:         %s (%s)\n", sess.ExpiresAt.Format(time.RFC1123), time.Until(sess.ExpiresAt).Round(time.Second))
+	} else {
+		fmt.Printf("Expiry:         Unknown\n")
+	}
+	if claims != nil && claims.Iss != "" {
+		fmt.Printf("Issuer:         %s\n", claims.Iss)
+	}
+	fmt.Printf("Import Source:  %s\n", sess.ImportSource)
+	fmt.Printf("Cookies:        %d captured\n", len(sess.Cookies))
+	for _, c := range sess.Cookies {
+		fmt.Printf("  - %s\n", c.Name)
+	}
+	fmt.Printf("Headers:        %d captured\n", len(sess.Headers))
+	for k := range sess.Headers {
+		fmt.Printf("  - %s\n", k)
+	}
+	os.Exit(ExitSuccess)
+}
+
+func handleSessionValidate() {
+	sess, err := session.LoadSession()
+	if err != nil {
+		fmt.Printf("✗ Validation failed: %v\n", err)
+		os.Exit(ExitError)
+	}
+
+	res := session.ValidateSession(sess)
+	fmt.Println("=== ANEF SESSION VALIDATION ===")
+	for _, check := range res.Checks {
+		fmt.Println(check)
+	}
+
+	if res.Ready {
+		os.Exit(ExitSuccess)
+	} else {
+		os.Exit(ExitError)
+	}
+}
+
+func handleSessionDoctor() {
+	rep := session.RunSessionDoctor()
+	fmt.Println("=== ANEF SESSION DOCTOR ===")
+	allOk := true
+	for _, check := range rep.Checks {
+		symbol := "✓"
+		if !check.Passed {
+			symbol = "✗"
+			allOk = false
+		}
+		fmt.Printf("[%s] %s: %s\n", symbol, check.Component, check.Message)
+	}
+
+	if allOk {
+		os.Exit(ExitSuccess)
+	} else {
+		os.Exit(ExitError)
+	}
+}
+
 func handleLogin() {
 	loginCmd := flag.NewFlagSet("login", flag.ExitOnError)
-	browserFlag := loginCmd.Bool("browser", false, "Launch default browser for automated OAuth redirect journey")
-	webFlag := loginCmd.Bool("web", false, "Alias for --browser")
 	curlFlag := loginCmd.String("curl", "", "Raw cURL command copied from Chrome DevTools")
 	userFlag := loginCmd.String("user", "", "Foreigner ID (numéro d'étranger 9999999999 or email)")
 	passFlag := loginCmd.String("pass", "", "Password")
 	_ = loginCmd.Parse(os.Args[2:])
 
-	if *browserFlag || *webFlag {
-		sess, err := auth.AuthenticateViaBrowser("https://administration-etrangers-en-france.interieur.gouv.fr/usagers/", 8484, 3*time.Minute)
-		if err != nil {
-			log.Error("Browser authentication error", "error", err)
-			os.Exit(ExitError)
-		}
-		if err := auth.SaveSession(sess); err != nil {
-			log.Error("Failed saving session", "error", err)
-			os.Exit(ExitError)
-		}
-		fmt.Printf("✓ Successfully captured browser session for user '%s'!\n", sess.Login)
-		os.Exit(ExitSuccess)
-	}
-
 	if *curlFlag != "" {
-		sess, err := auth.ParseCurl(*curlFlag)
+		sess, err := session.ParseCurl(*curlFlag)
 		if err != nil {
 			log.Error("Failed parsing cURL", "error", err)
 			os.Exit(ExitError)
 		}
-		if err := auth.SaveSession(sess); err != nil {
+		if err := session.SaveSession(sess); err != nil {
 			log.Error("Failed saving session", "error", err)
 			os.Exit(ExitError)
 		}
-		fmt.Printf("✓ Successfully imported cURL session for login '%s'!\n", sess.Login)
+		fmt.Printf("✓ Successfully imported cURL session for user '%s'!\n", sess.User)
 		os.Exit(ExitSuccess)
 	}
 
 	if *userFlag != "" && *passFlag != "" {
-		sess, err := auth.AuthenticateWithCredentials(nil, *userFlag, *passFlag)
+		sess, err := session.AuthenticateWithCredentials(nil, *userFlag, *passFlag)
 		if err != nil {
 			log.Error("Authentication failed", "error", err)
 			os.Exit(ExitAuthExpired)
 		}
-		if err := auth.SaveSession(sess); err != nil {
+		if err := session.SaveSession(sess); err != nil {
 			log.Error("Failed saving session", "error", err)
 			os.Exit(ExitError)
 		}
-		fmt.Printf("✓ Successfully logged in user '%s' via Keycloak!\n", sess.Login)
+		fmt.Printf("✓ Successfully logged in user '%s' via Keycloak!\n", sess.User)
 		os.Exit(ExitSuccess)
 	}
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("=== ANEF Session Authentication ===")
-	fmt.Println("Option 1: [ENTER] Launch automated browser authentication journey (anef login --browser)")
-	fmt.Println("Option 2: Paste DevTools cURL command ('curl https://...')")
-	fmt.Println("Option 3: Type 'p' for password fallback prompt")
-	fmt.Println("")
-	fmt.Print("Choice or cURL command [ENTER]: ")
-	input, _ := reader.ReadString('\n')
-	input = strings.TrimSpace(input)
-
-	if input == "" || input == "b" || input == "1" || input == "browser" {
-		sess, err := auth.AuthenticateViaBrowser("https://administration-etrangers-en-france.interieur.gouv.fr/usagers/", 8484, 3*time.Minute)
-		if err != nil {
-			log.Error("Browser authentication error", "error", err)
-			os.Exit(ExitError)
-		}
-		if err := auth.SaveSession(sess); err != nil {
-			log.Error("Failed saving session", "error", err)
-			os.Exit(ExitError)
-		}
-		fmt.Printf("✓ Successfully captured browser session for user '%s'!\n", sess.Login)
-		os.Exit(ExitSuccess)
-	}
-
-	if strings.Contains(input, "curl ") || strings.HasPrefix(input, "curl") {
-		sess, err := auth.ParseCurl(input)
-		if err != nil {
-			log.Error("Failed parsing cURL command", "error", err)
-			os.Exit(ExitError)
-		}
-		if err := auth.SaveSession(sess); err != nil {
-			log.Error("Failed saving session", "error", err)
-			os.Exit(ExitError)
-		}
-		fmt.Printf("✓ Successfully imported cURL session for login '%s'!\n", sess.Login)
-		os.Exit(ExitSuccess)
-	}
-
-	fmt.Println("\nNotice: ANEF Direct Access Password grants may be restricted by Keycloak security policy.")
-	fmt.Print("Identifiant (Foreigner ID or Email): ")
-	user, _ := reader.ReadString('\n')
-	user = strings.TrimSpace(user)
-
-	fmt.Print("Mot de passe: ")
-	pass, _ := reader.ReadString('\n')
-	pass = strings.TrimSpace(pass)
-
-	sess, err := auth.AuthenticateWithCredentials(nil, user, pass)
+	// Unified Caveman Session Import Journey
+	sess, err := session.AuthenticateViaBrowser("https://administration-etrangers-en-france.interieur.gouv.fr/usagers/")
 	if err != nil {
-		fmt.Printf("\n✗ Authentication Failed:\n%v\n", err)
-		os.Exit(ExitAuthExpired)
+		log.Error("Session import failed", "error", err)
+		os.Exit(ExitError)
 	}
-	if err := auth.SaveSession(sess); err != nil {
+
+	if err := session.SaveSession(sess); err != nil {
 		log.Error("Failed saving session", "error", err)
 		os.Exit(ExitError)
 	}
-	fmt.Printf("✓ Successfully logged in user '%s'!\n", user)
+
+	fmt.Printf("✓ Successfully imported session for user '%s' (Source: %s)!\n", sess.User, sess.ImportSource)
 	os.Exit(ExitSuccess)
 }
 
@@ -348,7 +385,7 @@ func handleStatus() {
 
 	foreignerID := app.ForeignerID
 	if foreignerID == "" && svc.Session != nil {
-		foreignerID = svc.Session.Login
+		foreignerID = svc.Session.User
 	}
 
 	fmt.Printf("=== ANEF APPLICATION STATUS ===\n")

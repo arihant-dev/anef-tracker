@@ -5,11 +5,12 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
-	"github.com/arihant-dev/anef-tracker/pkg/db"
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/arihant-dev/anef-tracker/pkg/db"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 )
 
 type ReplayResult struct {
@@ -40,7 +41,7 @@ func NewReplayEngine(database *db.DB, client *http.Client) *ReplayEngine {
 	}
 }
 
-func (e *ReplayEngine) ReplayRequest(ctx context.Context, httpLogID int64, session *auth.CurlSession) (*ReplayResult, error) {
+func (e *ReplayEngine) ReplayRequest(ctx context.Context, httpLogID int64, sess *session.Session) (*ReplayResult, error) {
 	if e.DB == nil {
 		return nil, fmt.Errorf("database not initialized")
 	}
@@ -59,8 +60,8 @@ func (e *ReplayEngine) ReplayRequest(ctx context.Context, httpLogID int64, sessi
 		return nil, fmt.Errorf("failed creating replay request: %w", err)
 	}
 
-	if session != nil {
-		auth.InjectAuthHeaders(req, session)
+	if sess != nil {
+		session.InjectAuthHeaders(req, sess)
 	}
 
 	if req.Header.Get("User-Agent") == "" {

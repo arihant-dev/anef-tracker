@@ -3,28 +3,29 @@ package v1
 import (
 	"context"
 	"fmt"
-	"github.com/arihant-dev/anef-tracker/pkg/auth"
-	"github.com/arihant-dev/anef-tracker/pkg/domain"
-	"github.com/arihant-dev/anef-tracker/pkg/recorder"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/arihant-dev/anef-tracker/pkg/domain"
+	"github.com/arihant-dev/anef-tracker/pkg/recorder"
+	"github.com/arihant-dev/anef-tracker/pkg/session"
 )
 
 type ProviderV1 struct {
 	HTTPClient *http.Client
 	Recorder   *recorder.HTTPRecorder
-	Session    *auth.CurlSession
+	Session    *session.Session
 }
 
-func NewProviderV1(client *http.Client, rec *recorder.HTTPRecorder, session *auth.CurlSession) *ProviderV1 {
+func NewProviderV1(client *http.Client, rec *recorder.HTTPRecorder, sess *session.Session) *ProviderV1 {
 	if client == nil {
 		client = &http.Client{Timeout: 30 * time.Second}
 	}
 	return &ProviderV1{
 		HTTPClient: client,
 		Recorder:   rec,
-		Session:    session,
+		Session:    sess,
 	}
 }
 
@@ -51,7 +52,7 @@ func (p *ProviderV1) Fetch(ctx context.Context) (*domain.Application, error) {
 	}
 
 	if p.Session != nil {
-		auth.InjectAuthHeaders(req, p.Session)
+		session.InjectAuthHeaders(req, p.Session)
 	}
 
 	if req.Header.Get("User-Agent") == "" {
@@ -87,7 +88,7 @@ func (p *ProviderV1) Fetch(ctx context.Context) (*domain.Application, error) {
 
 	userLogin := ""
 	if p.Session != nil {
-		userLogin = p.Session.Login
+		userLogin = p.Session.User
 	}
 
 	app, err := domain.MapJSONToApplication(rawJSON, userLogin)
