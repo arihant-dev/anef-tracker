@@ -38,23 +38,32 @@ make build
 
 ### Initial Authentication & Tracking
 
-1. Copy cURL command from Chrome DevTools on the ANEF portal and log in:
+1. Authenticate via browser-assisted cURL import:
+   ```bash
+   anef login
+   ```
+   Or paste a copied DevTools cURL directly:
    ```bash
    anef login --curl "curl 'https://...'"
    ```
 
-2. Fetch current status & record evidence:
+2. Validate operational readiness before fetching:
+   ```bash
+   anef session validate
+   ```
+
+3. Fetch current status & record evidence:
    ```bash
    anef fetch
    ```
 
-3. View active context & application status:
+4. View active context & application status:
    ```bash
    anef context
    anef status
    ```
 
-4. Launch interactive 17-tab TUI:
+5. Launch interactive 17-tab TUI:
    ```bash
    anef tui
    ```
@@ -64,7 +73,13 @@ make build
 ## Architecture at a Glance
 
 ```text
-Browser Authentication / cURL Payload
+Browser Authentication / DevTools cURL
+                  │
+                  ▼
+          Importer Subsystem
+                  │
+                  ▼
+         Provider-Agnostic Session
                   │
                   ▼
           HTTP Log Recorder
@@ -91,6 +106,10 @@ Browser Authentication / cURL Payload
 
 | Category | Command | Description |
 |---|---|---|
+| **Authentication & Session** | `anef login` | Browser-assisted or direct cURL session import |
+| | `anef session inspect` | View tokens, claims, cookies & import metadata |
+| | `anef session validate` | Check operational readiness to fetch (`Ready for fetch`) |
+| | `anef session doctor` | Diagnostic audit of session vault permissions & encryption |
 | **Monitoring** | `anef status` | Print current application status & legal classification |
 | | `anef timeline` | Display chronological human progress timeline |
 | | `anef watch` | Run watcher daemon (`--interval 360m` or `--once`) |
@@ -105,7 +124,7 @@ Browser Authentication / cURL Payload
 | | `anef evidence verify` | Verify snapshot SHA-256 hashes & link integrity |
 | **Workflow** | `anef workflow` | Render empirical state machine diagram |
 | | `anef analytics` | Display status duration medians & percentiles |
-| **System** | `anef doctor` | Run system diagnostics & health checks |
+| **System** | `anef doctor` | Run system installation diagnostics & health checks |
 | | `anef backup` | `create` compressed state archive or `restore` state |
 | | `anef security audit`| Audit local permissions (0600) & credential protection |
 

@@ -6,9 +6,9 @@ import (
 )
 
 var (
-	Version   = "v0.9.1"
+	Version   = "v1.0.0"
 	Commit    = "dev"
-	BuildDate = "2026-07-27"
+	BuildDate = "2026-07-28"
 )
 
 func GetVersionInfo() string {
