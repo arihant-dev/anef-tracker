@@ -29,7 +29,7 @@ func (e *Explorer) InspectEndpoint(id int64) (*domain.EndpointObservation, strin
 		return nil, "", "", err
 	}
 
-	if id < 1 || int(id) > len(endpoints) {
+	if id < 1 || id > int64(len(endpoints)) {
 		return nil, "", "", fmt.Errorf("invalid endpoint index #%d (total: %d)", id, len(endpoints))
 	}
 
